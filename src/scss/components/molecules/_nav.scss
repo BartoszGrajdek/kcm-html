@@ -1,0 +1,85 @@
+.nav {
+    @include media-breakpoint-down(xl) {
+        display: none;
+    }
+
+    & ul {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        list-style: none;
+
+        & li {
+            width: min-content;
+            max-width: 10rem;
+            line-height: 1;
+
+            &:not(:first-child) {
+                margin-left: 4rem;
+            }
+
+            & a,
+            & a:focus,
+            & a:visited {
+                color: $font-primary-color;
+                font-size: 1.1rem;
+                text-decoration: none;
+                text-transform: uppercase;
+            }
+
+            &:hover a {
+                color: $color-primary;
+            }
+        }
+    }
+
+    &__mobile {
+        width: 100%;
+        padding: 0 8% 2rem;
+
+        display: none;
+
+        list-style: none;
+
+        position: absolute;
+        left: 0;
+        top: 100%;
+
+        background-color: $color-white;
+
+        z-index: 2;
+        transform: translateY(-150%);
+        transition: all .3s;
+
+        @include media-breakpoint-down(xl) {
+            display: block;
+        }
+
+        &.active {
+            transform: translateY(0);
+        }
+
+        & li {
+            padding: .25rem;
+
+            position: relative;
+            z-index: 2;
+
+            & a,
+            & a:focus,
+            & a:visited,
+            & a:hover {
+                color: $font-primary-color;
+                font-size: 1.1rem;
+                text-decoration: none;
+                text-transform: uppercase;
+
+                transition: all .3s ease-out;
+            }
+
+            &:hover a {
+                color: $color-primary;
+            }
+        }
+    }
+}

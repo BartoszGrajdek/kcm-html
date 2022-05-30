@@ -1,0 +1,154 @@
+.header {
+    height: 12rem;
+    width: 100%;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: $color-white;
+
+    z-index: 3;
+
+    @include media-breakpoint-down(xxl) {
+        height: 10rem;
+    }
+
+    &::before {
+        height: 100%;
+        width: 100%;
+
+        content: "";
+        display: none;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        z-index: 3;
+
+        background-color: $color-white;
+
+        @include media-breakpoint-down(xl) {
+            display: block;
+        }
+    }
+
+    &__logo {
+        height: 6.2rem;
+        margin-left: 12%;
+
+        display: block;
+
+        position: relative;
+        z-index: 3;
+
+        @include media-breakpoint-down(xxl) {
+            height: 4.2rem;
+            margin-left: 8%;
+        }
+    }
+
+    &__nav ul {
+        padding-left: 0;
+        margin-bottom: 0;
+    }
+
+    &__phone {
+        height: 100%;
+
+        width: 23%;
+        padding: 4.9rem 0 4.9rem 4.9rem;
+
+        background-color: $color-primary;
+
+        @include media-breakpoint-down(xxl) {
+            padding: 3rem 0 3rem 3rem;
+        }
+    }
+
+    &__close-button {
+        height: 2rem;
+        width: 2rem;
+
+        position: absolute;
+        right: 8%;
+        top: 50%;
+        z-index: 3;
+
+        display: none;
+
+        transform: translateY(-50%);
+
+        @include media-breakpoint-down(xl) {
+            display: block;
+        }
+
+        & span {
+            height: 2px;
+            width: 2rem;
+
+            position: absolute;
+            left: 0;
+            top: 50%;
+
+            border-top: 2px solid $font-primary-color;
+
+            transform: translateY(1px);
+
+            &,
+            &::before,
+            &::after {
+                transition: all .3s ease-out;
+            }
+
+            &::before { 
+                height: 1px;
+                width: 2rem;
+
+                position: absolute;
+                display: block;
+                content: "";
+
+                bottom: .7rem;
+                left: 0;
+
+                border-top: 2px solid $font-primary-color;
+            }
+            
+            &::after {
+                height: 1px;
+                width: 2rem;
+    
+                position: absolute;
+                display: block;
+                content: "";
+    
+                top: .6rem;
+                left: 0;
+    
+                border-top: 2px solid $font-primary-color;
+            }
+        }
+
+        &.active span {
+            border-color: transparent;
+
+            &::before {
+                width: 2.05rem;
+                transform-origin: left bottom;
+                transform: rotate(45deg);
+            }
+            
+            &::after {
+                width: 2.05rem;
+                transform-origin: left top;
+                transform: rotate(-45deg);
+            }
+        }
+    }
+}

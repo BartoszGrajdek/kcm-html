@@ -1,0 +1,172 @@
+.our-team {
+    padding: 7rem 0;
+
+    @include media-breakpoint-down(md) {
+        padding: 3.5rem 0;
+    }
+
+    &__heading {
+        margin-bottom: 0;
+
+        font-size: 1.9rem;
+        font-family: $font-medium;
+        letter-spacing: .75rem;
+        text-transform: uppercase;
+        text-align: center;
+
+        @include media-breakpoint-down(lg) {
+            font-size: 1.4rem;
+        }
+    }
+
+    &__container {
+        margin-top: 3.5rem;
+
+        @include media-breakpoint-down(md) {
+            margin-top: .25rem;
+        }
+    }
+
+    &__photo {
+        width: 100%;
+
+        display: flex;
+        position: absolute;
+        top: -15%;
+        left: 0;
+        
+        cursor: pointer;
+    }
+
+    &__photo-container {
+        height: 0;
+        width: 100%;
+        padding-bottom: 100%;
+        overflow: hidden;
+        position: relative;
+
+        cursor: pointer;
+
+        &:hover .our-team__hover {
+            opacity: 1 !important;
+        }
+    }
+
+    &__hover {
+        height: 100%;
+        width: 100%;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        opacity: 0;
+        transition: all .3s ease-out;
+        
+        cursor: pointer;
+        z-index: 2;
+        
+        background-color: rgba($color-primary-2, .8);
+
+        &-icon {
+            width: 10rem;
+            height: 10rem;
+
+            position: relative;
+
+            display: block;
+
+            cursor: pointer;
+
+            &::after,
+            &::before {
+                height: 2px;
+                width: 10rem;
+
+                position: absolute;
+
+                display: block;
+                content: '';
+
+                border-top: 2px solid $color-white;
+            }
+
+            &::before {
+                top: 0;
+                left: 50%;
+
+                transform-origin: left bottom;
+                transform: rotate(90deg);
+            }
+
+            &::after {
+                top: 50%;
+                left: 0;
+
+                transform: translateY(-1px);
+            }
+        }
+
+        &-text {
+            margin-top: 1.5rem;
+
+            color: $color-white;
+            font-family: $font-thin;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            line-height: 1;
+
+            display: block;
+
+            cursor: pointer;
+        }
+    }
+
+    &__person-content {
+        padding: 6.5rem 5.2rem 0;
+
+        position: relative;
+    }
+
+    &__icon {
+        height: 7rem;
+        width: 7rem;
+
+        display: block;
+
+        position: absolute;
+        top: 1.5rem;
+        left: .25rem;
+
+        font-size: 11rem;
+        font-family: $font-thin;
+        line-height: 7rem;
+    }
+
+    &__name {
+        font-size: 1.7rem;
+        font-family: $font-medium;
+        text-transform: uppercase;
+
+        @include media-breakpoint-down(lg) {
+            font-size: 1.4rem;
+        }
+    }
+    
+    &__title {
+        margin-top: 1.5rem;
+
+        font-size: 1.4rem;
+        font-family: $font-thin;
+        text-transform: uppercase;
+
+        @include media-breakpoint-down(lg) {
+            font-size: 1.2rem;
+        }
+    }
+}

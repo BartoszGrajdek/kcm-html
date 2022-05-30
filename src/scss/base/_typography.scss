@@ -1,0 +1,121 @@
+body{
+    font-family: $font-primary;
+    font-size: 1.6rem;
+    line-height: 150%;
+    color: $font-primary-color;
+    @include rwd(desktop-s){
+        font-size: 1.8rem;
+    }
+}
+button{
+    font-family: $font-primary;
+    font-weight: 700;
+    font-size: 1.4rem;
+    line-height: 185%;
+}
+
+h1,.h1{
+    font-family: $font-book;
+    font-weight: 900;
+    font-size: 4rem;
+    line-height: 133.33%;
+    margin-bottom: 2.4rem;
+    @include rwd(desktop-s){
+        font-size: 7.2rem;
+    }
+}
+h2,.h2{
+    font-family: $font-book;
+    font-weight: 800;
+    font-size: 2.4rem;
+    line-height: 133.33%;
+    margin-bottom: 2.4rem;
+    @include rwd(desktop-s){
+        font-size: 2.8rem;
+        font-weight: 900;
+    }
+}
+h3,.h3{
+    font-family: $font-book;
+    font-weight: 900;
+    font-size: 2rem;
+    line-height: 133.33%;
+    margin-bottom: 0.8rem;
+    @include rwd(desktop-s){
+        font-size: 2.4rem;
+        font-weight: 800;
+    }
+}
+h4,.h4{
+    font-family: $font-book;
+    font-weight: 800;
+    font-size: 1.8rem;
+    line-height: 133.33%;
+    margin-bottom: 0.8rem;
+    @include rwd(desktop-s){
+        font-weight: 900;
+        font-size: 2rem;
+    }
+}
+h5,.h5{
+    font-family: $font-book;
+    font-weight: 800;
+    font-size: 1.6rem;
+    line-height: 133.33%;
+    margin-bottom: 0.6rem;
+    @include rwd(desktop-s){
+        font-weight: 800;
+        font-size: 1.8rem;
+    }
+}
+h6,.h6{
+    font-family: $font-book;
+    font-weight: 800;
+    font-size: 1.6rem;
+    margin-bottom: 0.6rem;
+    line-height: 133.33%;
+}
+p{
+    margin-bottom: 2.4rem;
+}
+.overline{
+    font-family: $font-primary;
+    font-weight: 700;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    line-height: 116.66%;
+    margin-bottom: 2rem;
+    &--0{
+        font-family: $font-primary;
+        font-weight: 700;
+        font-size: 1.4rem;
+        line-height: 116.66%;
+    }
+    &--1{
+        font-family: $font-primary;
+        font-weight: 500;
+        font-size: 1.6rem;
+        line-height: 116.66%;
+    }
+    &--2{
+        font-family: $font-primary;
+        font-weight: 700;
+        font-size: 1.4rem;
+        line-height: 116.66%;
+        @include rwd(desktop-s){
+            font-weight: 500;
+            font-size: 1.8rem;
+        }
+    }
+}
+
+input{
+    font-family: $font-primary;
+    font-size: 1.4rem;
+    font-weight: 700;
+    &::placeholder{
+        font-family: $font-primary;
+        font-size: 1.4rem;
+        font-weight: 700;
+    }
+}

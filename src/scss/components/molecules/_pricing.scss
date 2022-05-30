@@ -1,0 +1,170 @@
+.pricing {
+    width: 100%;
+
+    &__container {
+        width: 100%;
+        padding: 10rem;
+
+        position: relative;
+
+        @include media-breakpoint-down(lg) {
+            padding: 5rem;
+        }
+
+        &::before {
+            width: 100%;
+            height: 100%;
+
+            content: "";
+            display: block;
+
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            background-color: rgba(#eaeaea, .96);
+        }
+    }
+
+    &__background {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 40%;
+        z-index: 2;
+    }
+
+    &__header {
+        position: absolute;
+        top: 0;
+        left: -10rem;
+        z-index: 2;
+
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        transform-origin: right top;
+        transform: translateX(-100%) rotate(-90deg);
+
+        @include media-breakpoint-down(xl) {
+            left: -5rem;
+        }
+
+        @include media-breakpoint-down(lg) {
+            position: relative;
+            left: 0;
+            transform: none;
+            margin-bottom: 5rem;
+        }
+    }
+
+    &__heading {
+        margin-bottom: 0;
+
+        font: 3.5rem $font-primary;
+        text-transform: uppercase;
+
+        @include media-breakpoint-down(md) {
+            font-size: 2.8rem;
+        }
+    }
+
+    &__logo {
+        margin-left: 1.8rem;
+
+        height: 2.4rem;
+    }
+
+    &__options {
+        max-width: 75rem;
+        margin: 0 auto;
+
+        position: relative;
+    }
+
+    &__doctor {
+        max-width: 38rem;
+
+        position: relative;
+        z-index: 2;
+
+        font: 1.4rem $font-medium;
+        text-transform: uppercase;
+
+        &--hidden {
+            display: none;
+        }
+    }
+
+    &__list {
+        margin: 1.5rem 0 4rem;
+        padding-left: 0;
+
+        list-style: none;
+
+        &--hidden {
+            display: none;
+        }
+
+        & li {
+            padding: .5rem 4rem .5rem 0;
+
+            position: relative;
+            z-index: 2;
+
+            font: 1.4rem $font-light;
+            text-transform: uppercase;
+
+            border-bottom: 1px solid $color-secondary;
+
+            @include media-breakpoint-down(md) {
+                font-size: 1.1rem;
+            }
+        }
+    }
+
+    &__price {
+        position: absolute;
+        bottom: .5rem;
+        right: 0;
+
+        font: 1.4rem $font-light;
+        text-transform: uppercase;
+    }
+
+    &__open-button {
+        width: min-content;
+        margin: 0 auto;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+
+        cursor: pointer;
+
+        & span:last-child {
+            font: 1rem $font-light;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        &--hidden {
+            display: none;
+        }
+
+        &-icon {
+            width: 3.2rem;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font: 3.2rem $font-thin;
+            line-height: 1;
+
+            transform: rotate(90deg);
+        }
+    }
+}

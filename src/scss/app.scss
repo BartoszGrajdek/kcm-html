@@ -1,0 +1,32 @@
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+@import './utils/mixins';
+@import './utils/reset';
+@import './base/fonts';
+@import './base/normalize';
+@import './utils/variables';
+@import './utils/helpers';
+@import './base/typography';
+
+html {
+  font-size: 10px;
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@import './components/atoms/buttons';
+@import './components/atoms/phone';
+
+@import './components/molecules/contact-us';
+@import './components/molecules/header';
+@import './components/molecules/hero';
+@import './components/molecules/nav';
+@import './components/molecules/our-team';
+@import './components/molecules/popup';
+@import './components/molecules/pricing';
+@import './components/molecules/services';
+@import './components/molecules/slider';
+@import './components/molecules/text-image';

@@ -1,0 +1,247 @@
+// MEDIA QUERY MANAGER
+/*
+0 - 320px: DEFAULT
+320 - 374px: phone-s
+375 - 424px: phone-m
+425 - 499px: phone-l
+500 - 599px: tab-s
+600 - 767px: tab-m
+768 - 849px: tab-l
+850 - 899px: tab-xl
+900 - 1023px: tab-xxl
+1024 - 1099px: laptop-s
+1100 - 1224px: laptop-m
+1224 - 1439px: laptop-l
+1440 - 1919px: desktop-s
+1920px+:       desktop-m
+
+1em = 16px
+*/
+
+@mixin rwd($breakpoint) {
+    @if $breakpoint==phone-s {
+      @media only screen and (min-width: 20em) {
+        @content;
+      }
+    }
+    @if $breakpoint==phone-m {
+      @media only screen and (min-width: 23.4375em) {
+        @content;
+      }
+    }
+    @if $breakpoint==phone-l {
+      @media only screen and (min-width: 26.5625em) {
+        @content;
+      }
+    }
+    @if $breakpoint==tab-s {
+      @media only screen and (min-width: 31.25em) {
+        @content;
+      }
+    }
+    @if $breakpoint==tab-m {
+      @media only screen and (min-width: 37.5em) {
+        @content;
+      }
+    }
+    @if $breakpoint==tab-l {
+      @media only screen and (min-width: 48em) {
+        @content;
+      }
+    }
+    @if $breakpoint==tab-xl {
+      @media only screen and (min-width: 53.125em) {
+        @content;
+      }
+    }
+    @if $breakpoint==tab-xxl {
+      @media only screen and (min-width: 56.25em) {
+        @content;
+      }
+    }
+    @if $breakpoint==laptop-s {
+      @media only screen and (min-width: 64em) {
+        @content;
+      }
+    }
+    @if $breakpoint==laptop-m {
+      @media only screen and (min-width: 68.75em) {
+        @content;
+      }
+    }
+    @if $breakpoint==laptop-l {
+      @media only screen and (min-width: 76.5em) {
+        @content;
+      }
+    }
+    @if $breakpoint==desktop-s {
+      @media only screen and (min-width: 90em) {
+        @content;
+      }
+    }
+    @if $breakpoint==desktop-m {
+      @media only screen and (min-width: 110em) {
+        @content;
+      }
+    }
+  }
+  
+  //MARGIN & PADDING
+  @for $i from 0 through 128 {
+    $len: $i * 0.25;
+    .pl-#{$i},
+    .px-#{$i} {
+      padding-left: #{$len}rem !important;
+    }
+    .pr-#{$i},
+    .px-#{$i} {
+      padding-right: #{$len}rem !important;
+    }
+    .pt-#{$i},
+    .py-#{$i} {
+      padding-top: #{$len}rem !important;
+    }
+    .pb-#{$i},
+    .py-#{$i} {
+      padding-bottom: #{$len}rem !important;
+    }
+    .ml-#{$i},
+    .mx-#{$i} {
+      margin-left: #{$len}rem !important;
+    }
+    .mr-#{$i},
+    .mx-#{$i} {
+      margin-right: #{$len}rem !important;
+    }
+    .mt-#{$i},
+    .my-#{$i} {
+      margin-top: #{$len}rem !important;
+    }
+    .mb-#{$i},
+    .my-#{$i} {
+      margin-bottom: #{$len}rem !important;
+    }
+  }
+  
+  //FONT WEIGHT
+  @for $i from 1 through 9 {
+    $len: $i * 100;
+    .font-weight-#{$len} {
+      font-weight: #{$len};
+    }
+  }
+  
+  //TEXT COLOR
+  $primaryTextColor: (
+    "100": #e6eaf0,
+    "200": #ccd4e1,
+    "300": #99a9c3,
+    "400": #667ea4,
+    "500": #335386,
+    "600": #002f6c,
+    "700": #002053,
+    "800": #00183e,
+  );
+  @for $i from 1 through 8 {
+    $len: $i * 100;
+    .text-color-#{$len} {
+      color: map-get($primaryTextColor, #{$len});
+    }
+  }
+  
+  //BACKGROUND COLOR
+  $backgroundColor: (
+    "0": #ffffff,
+    "100": #f0f2f4,
+    "200": #e5e9ec,
+    "300": #d8dcdf,
+    "400": #c6cacd,
+    "500": #a7acb1,
+    "600": #81868b,
+    "700": #4e5256,
+    "800": #2c3135,
+    "900": #1a1d20,
+  );
+  @for $i from 0 through 9 {
+    $len: $i * 100;
+    .bg-color-#{$len} {
+      background-color: map-get($backgroundColor, #{$len});
+    }
+  }
+  
+  //UTILS
+  
+  @mixin spaceBetween() {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  
+  @mixin sectionPadding {
+    padding: 6rem 2rem 8rem;
+    @include rwd(laptop-s) {
+      padding: 10rem 5rem 12rem;
+    }
+    @include rwd(desktop-s) {
+      padding: 12rem 9rem 14rem;
+    }
+  }
+  @mixin sectionPaddingWide {
+    padding: 3rem 2rem 8rem;
+    @include rwd(tab-xxl) {
+      padding: 6rem 2rem 8rem;
+    }
+    @include rwd(laptop-s) {
+      padding: 10rem 3rem 12rem;
+    }
+    @include rwd(desktop-s) {
+      padding: 12rem 5rem 9rem;
+    }
+  }
+
+
+// =============================================================================
+// String Replace
+// =============================================================================
+
+@function str-replace($string, $search, $replace: "") {
+	$index: str-index($string, $search);
+
+	@if $index {
+		@return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+	}
+
+	@return $string;
+}
+
+// =============================================================================
+// Font Face
+// =============================================================================
+
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) {
+	$src: null;
+
+	$extmods: (
+		eot: "?",
+		svg: "#" + str-replace($name, " ", "_")
+	);
+
+	$formats: (
+		otf: "opentype",
+		ttf: "truetype"
+	);
+
+	@each $ext in $exts {
+		$extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+		$format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+		$src: append($src, url(quote($path + "." + $extmod)) format(quote($format)), comma);
+	}
+
+	@font-face {
+		font-family: quote($name);
+		font-style: $style;
+		font-weight: $weight;
+		src: $src;
+	}
+}

@@ -1,0 +1,43 @@
+.phone {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    @include media-breakpoint-down(xl) {
+        display: none;
+    }
+
+    &__icon {
+        height: 2.2rem;
+        width: 2.2rem;
+        
+        @include media-breakpoint-down(xxl) {
+            height: 1.8rem;
+            width: 1.8rem;
+        }
+        
+        & path {
+            color: $color-white;
+        }
+    }
+
+    &__text {
+        margin-left: 1.5rem;
+
+        font-size: 1.6rem;
+        text-transform: uppercase;
+        color: $color-white;
+
+        @include media-breakpoint-down(xxl) {
+            font-size: 1.2rem;
+        }
+    }
+
+    &__number,
+    &__number:focus,
+    &__number:visited,
+    &__number:hover {
+        color: $color-white;
+        text-decoration: none;
+    }
+}

@@ -1,0 +1,165 @@
+.contact-us {
+    position: relative;
+
+    &__map {
+        width: 100% !important;
+
+        & .gmap_canvas,
+        & iframe {
+            width: 100% !important;
+        }
+    }
+
+    &__container {
+        width: 45%;
+        height: 100%;
+        padding: 9rem;
+
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 2;
+
+        background-color: rgba($color-primary, .9);
+
+        @include media-breakpoint-down(xl) {
+            width: 60%;
+        }
+
+        @include media-breakpoint-down(lg) {
+            width: 100%;
+            height: min-content;
+            padding: 9rem calc(50vw - 20rem) 13rem;
+
+            position: relative;
+        }
+
+        @include media-breakpoint-down(sm) {
+            padding: 5rem 2.5rem 8rem;
+        }
+    }
+
+    &__heading {
+        color: $color-white;
+        font-family: $font-medium;
+        letter-spacing: .4rem;
+        font-size: 1.2rem;
+        text-transform: uppercase;
+    }
+    
+    &__phone {
+        margin-top: 2rem;
+        
+        display: block;
+        
+        color: $color-white;
+        font-family: $font-medium;
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        text-decoration: none;
+
+        &:hover {
+            color: $color-white;
+        }
+    }
+    
+    &__text {
+        margin-top: 4rem;
+
+        display: block;
+
+        color: $color-white;
+        font-family: $font-primary;
+        font-size: 1.1rem;
+    }
+    
+    &__form {
+        width: min-content;
+        margin-top: 2rem;
+
+        position: relative;
+
+        @include media-breakpoint-down(sm) {
+            width: 100%;
+        }
+        
+        & input {
+            width: 40rem;
+            padding-bottom: .5rem;
+
+            color: $color-white;
+            font-family: $font-thin;
+            font-size: 1.1rem;
+            
+            outline: none;
+            border: none;
+            
+            background-color: transparent;
+            border-bottom: 1px solid $color-white;
+
+            @include media-breakpoint-down(sm) {
+                width: 100%;
+            }
+            
+            &::placeholder {
+                color: $color-white;
+                font-family: $font-thin;
+                font-size: 1.1rem;
+                text-transform: uppercase;
+            }
+        }
+        
+        & textarea {
+            width: 40rem;
+            height: 20rem;
+            padding-bottom: .5rem;
+            
+            color: $color-white;
+            font-family: $font-thin;
+            font-size: 1.1rem;
+            
+            outline: none;
+            border: none;
+            
+            resize: none;
+            
+            background-color: transparent;
+            border-bottom: 1px solid $color-white;
+
+            @include media-breakpoint-down(sm) {
+                width: 100%;
+            }
+            
+            &::placeholder {
+                color: $color-white;
+                font-family: $font-thin;
+                font-size: 1.1rem;
+                text-transform: uppercase;
+            }
+        }
+        
+        & button {
+            padding: 1.2rem 3rem;
+
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            
+            color: $color-primary;
+            font-family: $font-thin;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            
+            background-color: $color-white;
+            border: 1px solid $color-white;
+
+            transition: all .3s ease-out;
+            transform: translateY(93%);
+
+            &:hover {
+                background-color: transparent;
+                color: $color-white;
+            }
+        }
+    }
+}

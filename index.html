@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Scss</title>
+    <link rel="stylesheet" href="./dist/css/main.css">
+    <script src="./dist/js/main.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+</head>
+
+<body>
+    <section class="header">
+        <img src="./src/img/logo.png" alt="Krakowskie - centrum medyczne"
+            class="header__logo">
+        <nav class="header__nav nav">
+            <ul>
+                <li><a href="#">Strona główna</a></li>
+                <li><a href="#">Poznaj centrum</a></li>
+                <li><a href="#">Oferta centrum</a></li>
+                <li><a href="#">Nasi sepcjaliści</a></li>
+                <li><a href="#">Cennik centrum</a></li>
+                <li><a href="#">Skontaktuj się z nami</a></li>
+            </ul>
+        </nav>
+        <div class="header__phone phone">
+            <svg class="phone__icon" width="22px" height="22px" viewBox="0 0 22 22" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M18.1182 14.702L14 15.5C11.2183 14.1038 9.5 12.5 8.5 10L9.26995 5.8699L7.81452 2L4.0636 2C2.93605 2 2.04814 2.93178 2.21654 4.04668C2.63695 6.83 3.87653 11.8765 7.5 15.5C11.3052 19.3052 16.7857 20.9564 19.802 21.6127C20.9668 21.8662 22 20.9575 22 19.7655L22 16.1812L18.1182 14.702Z"
+                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <span class="phone__text">Przemyśl | <a href="tel:123-123-123" class="phone__number">790 866 877</a></span>
+        </div>
+        <button class="header__close-button">
+            <span>&nbsp;</span>
+        </button>
+        <ul class="header__nav--mobile nav__mobile">
+            <li><a href="#">Strona główna</a></li>
+            <li><a href="#">Poznaj centrum</a></li>
+            <li><a href="#">Oferta centrum</a></li>
+            <li><a href="#">Nasi sepcjaliści</a></li>
+            <li><a href="#">Cennik centrum</a></li>
+            <li><a href="#">Skontaktuj się z nami</a></li>
+        </ul>
+    </section>
+
+    <section class="hero"
+        style="background-image: url('./src/img/hero-background.png');">
+        <svg class="hero__overlay" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            width="793px" height="943px">
+            <image x="0px" y="0px" width="793px" height="943px"
+                xlink:href="data:img/png;base64,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" />
+        </svg>
+        <div class="hero__social">
+            <a href="#" class="hero__social-icon hero__social-fb">
+                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 310 310"
+                    style="enable-background:new 0 0 310 310;" xml:space="preserve">
+                    <g id="XMLID_834_">
+                        <path id="XMLID_835_" d="M81.703,165.106h33.981V305c0,2.762,2.238,5,5,5h57.616c2.762,0,5-2.238,5-5V165.765h39.064
+                                c2.54,0,4.677-1.906,4.967-4.429l5.933-51.502c0.163-1.417-0.286-2.836-1.234-3.899c-0.949-1.064-2.307-1.673-3.732-1.673h-44.996
+                                V71.978c0-9.732,5.24-14.667,15.576-14.667c1.473,0,29.42,0,29.42,0c2.762,0,5-2.239,5-5V5.037c0-2.762-2.238-5-5-5h-40.545
+                                C187.467,0.023,186.832,0,185.896,0c-7.035,0-31.488,1.381-50.804,19.151c-21.402,19.692-18.427,43.27-17.716,47.358v37.752H81.703
+                                c-2.762,0-5,2.238-5,5v50.844C76.703,162.867,78.941,165.106,81.703,165.106z" />
+                    </g>
+                </svg>
+            </a>
+            <a href="#" class="hero__social-icon hero__social-insta">
+                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 300 300"
+                    style="enable-background:new 0 0 300 300;" xml:space="preserve">
+                    <g id="XMLID_504_">
+                        <path id="XMLID_505_" d="M38.52,0.012h222.978C282.682,0.012,300,17.336,300,38.52v222.978c0,21.178-17.318,38.49-38.502,38.49
+                            H38.52c-21.184,0-38.52-17.313-38.52-38.49V38.52C0,17.336,17.336,0.012,38.52,0.012z M218.546,33.329
+                            c-7.438,0-13.505,6.091-13.505,13.525v32.314c0,7.437,6.067,13.514,13.505,13.514h33.903c7.426,0,13.506-6.077,13.506-13.514
+                            V46.854c0-7.434-6.08-13.525-13.506-13.525H218.546z M266.084,126.868h-26.396c2.503,8.175,3.86,16.796,3.86,25.759
+                            c0,49.882-41.766,90.34-93.266,90.34c-51.487,0-93.254-40.458-93.254-90.34c0-8.963,1.37-17.584,3.861-25.759H33.35v126.732
+                            c0,6.563,5.359,11.902,11.916,11.902h208.907c6.563,0,11.911-5.339,11.911-11.902V126.868z M150.283,90.978
+                            c-33.26,0-60.24,26.128-60.24,58.388c0,32.227,26.98,58.375,60.24,58.375c33.278,0,60.259-26.148,60.259-58.375
+                            C210.542,117.105,183.561,90.978,150.283,90.978z" />
+                    </g>
+                </svg>
+            </a>
+            <span class="hero__social-text">Bądź na bieżąco</span>
+        </div>
+        <div class="hero__content">
+            <h4 class="hero__heading"><b>Krakowskie Centrum Medyczne</b> to nowoczesne specjalistyczne gabinety lekarskie w
+                Przemyślu.</h4>
+            <span class="hero__subheading">Zapraszamy - Przemyśl | Rynek 26</span>
+            <div class="hero__buttons"><a href="#" class="btn btn--filled">umów sie na wizyte</a><a href="#"
+                    class="btn btn--outlined">ZOBACZ OFERTE</a></div>
+        </div>
+    </section>
+
+    <section class="services container-fluid row gx-0">
+        <div class="services__left-container col-12 col-xxl-6 gx-0">
+            <div class="services__content">
+                <h4 class="services__heading">Krakowskie Centrum Medyczne oferuje:</h4>
+                <p class="services__text">KCM specjalizuje się przede wszystkim w diagnostyce i leczeniu schorzeń z zakresu
+                    położnictwa i ginekologii, w tym ciążach wysokiego ryzyka, medycyną płodową a także diagnostyką i
+                    leczeniem schorzeń z zakresu kardiologii, urologii, andrologii i neurologii a w niedalekiej przyszłości
+                    także z zakresu innych specjalności.</p>
+                <ul class="services__list">
+                    <li>specjalistyczne konsultacje medyczne
+                        z zakresu położnictwa i ginekologii,
+                        kardiologii, urologii,
+                        neurologii
+                        <div class="services__description">
+                            <h3>specjalistyczne konsultacje medyczne
+                                z zakresu położnictwa i ginekologii,
+                                kardiologii, urologii,
+                                neurologii - opis</h3>
+
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
+                                viverra maecenas accumsan lacus vel facilisis.
+
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
+                                viverra maecenas accumsan lacus vel facilisis.
+
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
+                                viverra maecenas accumsan lacus vel facilisis.
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
+                                viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
+                                ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel
+                                facilisis.
+                            </p>
+                        </div>
+                        <span>></span>
+                    </li>
+                    <li>profesjonalne badania USG, USG 3D/4D
+                        <span>></span>
+                        <div class="services__description">
+                            <h3>specjalistyczne konsultacje medyczne
+                                z zakresu położnictwa i ginekologii,
+                                kardiologii, urologii,
+                                neurologii - opis</h3>
+
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
+                                viverra maecenas accumsan lacus vel facilisis.
+
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
+                                viverra maecenas accumsan lacus vel facilisis.
+
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
+                                viverra maecenas accumsan lacus vel facilisis.
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
+                                viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
+                                ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel
+                                facilisis.
+                            </p>
+                        </div>
+                    </li>
+                    <li>diagnostykę kardiologiczną -
+                        EKG, ECHO serca, Holter EKG
+                        <span>></span>
+                        <div class="services__description">
+                            <h3>specjalistyczne konsultacje medyczne
+                                z zakresu położnictwa i ginekologii,
+                                kardiologii, urologii,
+                                neurologii - opis</h3>
+
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
+                                viverra maecenas accumsan lacus vel facilisis.
+
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
+                                viverra maecenas accumsan lacus vel facilisis.
+
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
+                                viverra maecenas accumsan lacus vel facilisis.
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
+                                viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
+                                ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel
+                                facilisis.
+                            </p>
+                        </div>
+                    </li>
+                    <li>drobne zabiegi ginekologiczne
+                        i urologiczne
+                        <span>></span>
+                        <div class="services__description">
+                            <h3>specjalistyczne konsultacje medyczne
+                                z zakresu położnictwa i ginekologii,
+                                kardiologii, urologii,
+                                neurologii - opis</h3>
+
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
+                                viverra maecenas accumsan lacus vel facilisis.
+
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
+                                viverra maecenas accumsan lacus vel facilisis.
+
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
+                                viverra maecenas accumsan lacus vel facilisis.
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
+                                viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
+                                ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel
+                                facilisis.
+                            </p>
+                        </div>
+                    </li>
+                    <li>prowadzenie ciąży, w tym ciąży
+                        wysokiego ryzyka
+                        <span>></span>
+                        <div class="services__description">
+                            <h3>specjalistyczne konsultacje medyczne
+                                z zakresu położnictwa i ginekologii,
+                                kardiologii, urologii,
+                                neurologii - opis</h3>
+
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
+                                viverra maecenas accumsan lacus vel facilisis.
+
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
+                                viverra maecenas accumsan lacus vel facilisis.
+
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
+                                viverra maecenas accumsan lacus vel facilisis.
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
+                                viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
+                                ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel
+                                facilisis.
+                            </p>
+                        </div>
+                    </li>
+                    <li>Hello Mom - przesyłanie obrazów/filmów
+                        z USG na smartfon
+                        <span>></span>
+                        <div class="services__description">
+                            <h3>specjalistyczne konsultacje medyczne
+                                z zakresu położnictwa i ginekologii,
+                                kardiologii, urologii,
+                                neurologii - opis</h3>
+
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
+                                viverra maecenas accumsan lacus vel facilisis.
+
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
+                                viverra maecenas accumsan lacus vel facilisis.
+
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
+                                viverra maecenas accumsan lacus vel facilisis.
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
+                                viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
+                                ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel
+                                facilisis.
+                            </p>
+                        </div>
+                    </li>
+                    <li>badanie wolnego płodowego DNA
+                        <span>></span>
+                        <div class="services__description">
+                            <h3>specjalistyczne konsultacje medyczne
+                                z zakresu położnictwa i ginekologii,
+                                kardiologii, urologii,
+                                neurologii - opis</h3>
+
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
+                                viverra maecenas accumsan lacus vel facilisis.
+
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
+                                viverra maecenas accumsan lacus vel facilisis.
+
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
+                                viverra maecenas accumsan lacus vel facilisis.
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
+                                viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
+                                ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel
+                                facilisis.
+                            </p>
+                        </div>
+                    </li>
+                    <li>cytologię klasyczną i cienkowarstwową
+                        <span>></span>
+                        <div class="services__description">
+                            <h3>specjalistyczne konsultacje medyczne
+                                z zakresu położnictwa i ginekologii,
+                                kardiologii, urologii,
+                                neurologii - opis</h3>
+
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
+                                viverra maecenas accumsan lacus vel facilisis.
+
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
+                                viverra maecenas accumsan lacus vel facilisis.
+
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
+                                viverra maecenas accumsan lacus vel facilisis.
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
+                                viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
+                                ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel
+                                facilisis.
+                            </p>
+                        </div>
+                    </li>
+                    <li>diagnostykę HPV
+                        <span>></span>
+                        <div class="services__description">
+                            <h3>specjalistyczne konsultacje medyczne
+                                z zakresu położnictwa i ginekologii,
+                                kardiologii, urologii,
+                                neurologii - opis</h3>
+
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
+                                viverra maecenas accumsan lacus vel facilisis.
+
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
+                                viverra maecenas accumsan lacus vel facilisis.
+
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
+                                viverra maecenas accumsan lacus vel facilisis.
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
+                                viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
+                                ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel
+                                facilisis.
+                            </p>
+                        </div>
+                    </li>
+                    <li>badania mikrobiologiczne
+                        <span>></span>
+                        <div class="services__description">
+                            <h3>specjalistyczne konsultacje medyczne
+                                z zakresu położnictwa i ginekologii,
+                                kardiologii, urologii,
+                                neurologii - opis</h3>
+
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
+                                viverra maecenas accumsan lacus vel facilisis.
+
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
+                                viverra maecenas accumsan lacus vel facilisis.
+
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
+                                viverra maecenas accumsan lacus vel facilisis.
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo
+                                viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
+                                ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel
+                                facilisis.
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+                <p class="services__invitation"><b>Zapraszamy!</b>Pacjenci przyjmowani są wyłącznie
+                    po wcześniejszej rejestracji.</p>
+            </div>
+
+            <div class="services__text-block services__text-block--grey">
+                <div class="services__text-block-content">
+                    <h3 class="services__block-heading">Najwyższy standard usług
+                        medycznych !</h3>
+                    <p class="services__block-text">Przez to, że specjaliści przyjmujący w KCM pochodzą z Przemyśla, z dużym
+                        sentymentem oferują usługi medyczne mieszkańcom rodzinnego miasta a dzięki codziennej pracy w
+                        Krakowskich klinikach, (skąd nazwa) wprowadzają standardy kliniczne na wysokim poziomie, zgodnie z
+                        najnowszą wiedzą i umiejętnościami.</p>
+                    <a href="#" class="btn btn--grey-outline">nasi lekarze</a>
+                </div>
+            </div>
+        </div>
+        <div class="services__right-container col-12 col-xxl-6 gx-0">
+            <div class="services__text-block services__text-block--brown"
+                style="background-image: url('./src/img/services-brown-background.png');">
+                <div class="services__text-block-content">
+                    <h3 class="services__block-heading">Krakowskie Centrum Medyczne to nowoczesne specjalistyczne gabinety
+                        lekarskie w Przemyślu</h3>
+                    <p class="services__block-text">Miejsce założone przez specjalistę położnictwa i ginekologii Karolinę
+                        Jakubiec-Wiśniewską, prowadzone przez nią wraz z mężem - specjalistą kardiologii Pawłem Wiśniewskim
+                        dodatkowo we współpracy z lekarzami z innych dziedzin medycyny.</p>
+                    <a href="#" class="btn btn--white-outline">znajdz nas na mapie</a>
+                </div>
+            </div>
+            <div class="services__image-block"
+                style="background-image: url('./src/img/services-image.png');">
+                &nbsp;</div>
+        </div>
+    </section>
+
+    <div class="swiper slider">
+        <div class="swiper-wrapper slider__wrapper">
+            <div class="swiper-slide slider__slide">
+                <img src="./src/img/slider-photo.png" alt="Slider photo" class="slider__photo">
+            </div>
+            <div class="swiper-slide slider__slide">
+                <img src="./src/img/slider-photo.png" alt="Slider photo" class="slider__photo">
+            </div>
+            <div class="swiper-slide slider__slide">
+                <img src="./src/img/slider-photo.png" alt="Slider photo" class="slider__photo">
+            </div>
+            <div class="swiper-slide slider__slide">
+                <img src="./src/img/slider-photo.png" alt="Slider photo" class="slider__photo">
+            </div>
+            <div class="swiper-slide slider__slide">
+                <img src="./src/img/slider-photo.png" alt="Slider photo" class="slider__photo">
+            </div>
+            <div class="swiper-slide slider__slide">
+                <img src="./src/img/slider-photo.png" alt="Slider photo" class="slider__photo">
+            </div>
+        </div>
+    </div>
+
+    <section class="pricing">
+        <section class="pricing__container">
+            <img src="./src/img/pricing-background.png" alt="Logo Krakowskiego Centrum Medycznego" class="pricing__background">
+            <div class="pricing__options">
+                <div class="pricing__header">
+                    <h2 class="pricing__heading">Cennik</h2>
+                    <img src="./src/img/pricing-logo.png" alt="Logo" class="pricing__logo">
+                </div>
+                <h4 class="pricing__doctor">dr n. med. Karolina Jakubiec-Wiśniewska
+    specjalista położnictwa i ginekologii</h4>
+                <ul class="pricing__list">
+                    <li>
+                        wizyta ginekologiczna lub położnicza
+                        <span class="pricing__price">70zł</span>
+                    </li>
+                    <li>
+                        wizyta ginekologiczna lub położnicza z USG z opisem
+                        <span class="pricing__price">220zł</span>
+                    </li>
+                    <li>
+                        wizyta położnicza z USG 3D/4D/przesłanie zdjęć i filmików na telefon
+                        <span class="pricing__price">250zł</span>
+                    </li>
+                    <li>
+                        USG ginekologiczne z opisem
+                        <span class="pricing__price">120zł</span>
+                    </li>
+                    <li>
+                        USG położnicze z opisem
+                        <span class="pricing__price">50zł</span>
+                    </li>
+                    <li>
+                        USG położnicze 3D/4D, wydruk zdjęć 3D, przesłanie zdjęć i filmików na telefon
+                        <span class="pricing__price">170zł</span>
+                    </li>
+                    <li>
+                        wizyta recepturowa dla pacjentek gabinetu
+                        <span class="pricing__price">50zł</span>
+                    </li>
+                    <li>
+                        monitoring owulacji
+                        <span class="pricing__price">80zł</span>
+                    </li>
+                    <li>
+                        założenie wkładki Mirena/Kyleena/Jaydess
+                        <span class="pricing__price">1200zł</span>
+                    </li>
+                    <li>
+                        założenie samodzielnie zakupionej wkładki
+                        <span class="pricing__price">400zł</span>
+                    </li>
+                    <li>
+                        usunięcie wkładki
+                        <span class="pricing__price">200zł</span>
+                    </li>
+                    <li>
+                        cytologia z odbiorem online
+                        <span class="pricing__price">50zł</span>
+                    </li>
+                </ul>
+                <h4 class="pricing__doctor">lek. Paweł Wiśniewski
+                specjalista kardiologii</h4>
+                <ul class="pricing__list">
+                    <li>
+                        wizyta kardiologiczna z EKG
+                        <span class="pricing__price">70zł</span>
+                    </li>
+                    <li>
+                        wizyta kardiologiczna (z EKG) z ECHO serca z opisem
+                        <span class="pricing__price">270zł</span>
+                    </li>
+                    <li>
+                        badanie ECHO serca z opisem
+                        <span class="pricing__price">50zł</span>
+                    </li>
+                    <li>
+                        EKG z opisem
+                        <span class="pricing__price">50zł</span>
+                    </li>
+                    <li>
+                        Holter EKG
+                        <span class="pricing__price">50zł</span>
+                    </li>
+                </ul>
+                <h4 class="pricing__doctor">lek. Paweł Kornelak
+                urolog</h4>
+                <ul class="pricing__list">
+                    <li>
+                        konsultacja urologiczna
+                        <span class="pricing__price">170zł</span>
+                    </li>
+                    <li>
+                        konsultacja urologiczna + USG
+                        <span class="pricing__price">220zł</span>
+                    </li>
+                    <li>
+                        cewnikowanie pęcherza moczowego/wymiana cewnika
+                        <span class="pricing__price">100zł</span>
+                    </li>
+                    <li>
+                        operacja krótkiego wędzidełka
+                        <span class="pricing__price">1000zł</span>
+                    </li>
+                    <li>
+                        operacja stulejki
+                        <span class="pricing__price">1500zł</span>
+                    </li>
+                    <li>
+                        wykonanie wlewki dopęcherzowej z ialuril® Prefill
+                        <span class="pricing__price">600zł</span>
+                    </li>
+                </ul>
+                <h4 class="pricing__doctor">lek. Anna Stanowska
+                neurolog</h4>
+                <ul class="pricing__list">
+                    <li>
+                        konsultacja neurologiczna
+                        <span class="pricing__price">170zł</span>
+                    </li>
+                </ul>
+                <div class="pricing__open-button">
+                    <span class="pricing__open-button-icon">></span>
+                    <span>rozwiń cennik</span>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <section class="text-image container-fluid row justify-content-end gx-0"
+        style="background-image: url('./src/img/registration-background.png');">
+        <div class="text-image__content col-12 col-sm-10 col-md-8 col-xl-6 gx-0">
+            <h2 class="text-image__heading">Zarejestruj się w naszym centrum</h2>
+            <ul class="text-image__text">
+                <li>Zapraszamy do rejestracji telefonicznej</li>
+                <li>Codziennie w godzinach 9.00 do 18.00</li>
+                <li>Pod nr 790866877</li>
+                <li>Zachęcamy też do rejestracji przez messangera</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="our-team container-sm">
+        <h2 class="our-team__heading">Nasi specjaliści</h2>
+        <div class="our-team__container row justify-content-center">
+            <div class="our-team__person col-sm-5 col-lg-3 col-10 gx-0 gy-5"
+                data-description="Doktor Karolina Jakubiec-Wiśniewska jest absolwentką Collegium Medicum Uniwersytetu Jagiellońskiego w Krakowie, specjalistą w dziedzinie położnictwa i ginekologii. Ukończyła Studia Doktoranckie na Wydziale Lekarskim CM UJ (2014-2018r). Uzyskała tytuł doktora nauk medycznych z wyróżnieniem za pracę poświęconą zaburzeniom wzrastania płodu.">
+                <div class="our-team__photo-container">
+                    <div class="our-team__hover">
+                        <span class="our-team__hover-icon">&nbsp;</span>
+                        <span class="our-team__hover-text">Poznajmy się</span>
+                    </div>
+                    <img src="./src/img/employee.png" alt="Nasz pracownik" class="our-team__photo">
+                </div>
+                <div class="our-team__person-content">
+                    <h4 class="our-team__name">Lek. Anna Stanowska</h4>
+                    <h5 class="our-team__title">Neurolog</h5>
+                    <span class="our-team__icon">+</span>
+                </div>
+            </div>
+            <div class="our-team__person col-sm-5 col-lg-3 col-10 gx-0 gy-5"
+                data-description="Doktor Karolina Jakubiec-Wiśniewska jest absolwentką Collegium Medicum Uniwersytetu Jagiellońskiego w Krakowie, specjalistą w dziedzinie położnictwa i ginekologii. Ukończyła Studia Doktoranckie na Wydziale Lekarskim CM UJ (2014-2018r). Uzyskała tytuł doktora nauk medycznych z wyróżnieniem za pracę poświęconą zaburzeniom wzrastania płodu.">
+                <div class="our-team__photo-container">
+                    <div class="our-team__hover">
+                        <span class="our-team__hover-icon">&nbsp;</span>
+                        <span class="our-team__hover-text">Poznajmy się</span>
+                    </div>
+                    <img src="./src/img/employee.png" alt="Nasz pracownik" class="our-team__photo">
+                </div>
+                <div class="our-team__person-content">
+                    <h4 class="our-team__name">Lek. Anna Stanowska</h4>
+                    <h5 class="our-team__title">Neurolog</h5>
+                    <span class="our-team__icon">+</span>
+                </div>
+            </div>
+            <div class="our-team__person col-sm-5 col-lg-3 col-10 gx-0 gy-5"
+                data-description="Doktor Karolina Jakubiec-Wiśniewska jest absolwentką Collegium Medicum Uniwersytetu Jagiellońskiego w Krakowie, specjalistą w dziedzinie położnictwa i ginekologii. Ukończyła Studia Doktoranckie na Wydziale Lekarskim CM UJ (2014-2018r). Uzyskała tytuł doktora nauk medycznych z wyróżnieniem za pracę poświęconą zaburzeniom wzrastania płodu.">
+                <div class="our-team__photo-container">
+                    <div class="our-team__hover">
+                        <span class="our-team__hover-icon">&nbsp;</span>
+                        <span class="our-team__hover-text">Poznajmy się</span>
+                    </div>
+                    <img src="./src/img/employee.png" alt="Nasz pracownik" class="our-team__photo">
+                </div>
+                <div class="our-team__person-content">
+                    <h4 class="our-team__name">Lek. Anna Stanowska</h4>
+                    <h5 class="our-team__title">Neurolog</h5>
+                    <span class="our-team__icon">+</span>
+                </div>
+            </div>
+            <div class="our-team__person col-sm-5 col-lg-3 col-10 gx-0 gy-5"
+                data-description="Doktor Karolina Jakubiec-Wiśniewska jest absolwentką Collegium Medicum Uniwersytetu Jagiellońskiego w Krakowie, specjalistą w dziedzinie położnictwa i ginekologii. Ukończyła Studia Doktoranckie na Wydziale Lekarskim CM UJ (2014-2018r). Uzyskała tytuł doktora nauk medycznych z wyróżnieniem za pracę poświęconą zaburzeniom wzrastania płodu.">
+                <div class="our-team__photo-container">
+                    <div class="our-team__hover">
+                        <span class="our-team__hover-icon">&nbsp;</span>
+                        <span class="our-team__hover-text">Poznajmy się</span>
+                    </div>
+                    <img src="./src/img/employee.png" alt="Nasz pracownik" class="our-team__photo">
+                </div>
+                <div class="our-team__person-content">
+                    <h4 class="our-team__name">Lek. Anna Stanowska</h4>
+                    <h5 class="our-team__title">Neurolog</h5>
+                    <span class="our-team__icon">+</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-us">
+        <div class="contact-us__container">
+            <h4 class="contact-us__heading">Skontaktuj się z nami:</h4>
+            <a href="tel:+48664303030" class="contact-us__phone">Tel. +48 664 303 030</a>
+            <span class="contact-us__text">Śmiało, napisz do nas</span>
+            <form class="contact-us__form">
+                <input type="text" placeholder="Imię i nazwisko">
+                <input type="text" placeholder="Temat">
+                <input type="text" placeholder="E-mail">
+                <textarea name="message" id="message" cols="30" rows="5" placeholder="Wiadomość"></textarea>
+                <button type="submit">Wyślij wiadomość</button>
+            </form>
+        </div>
+        <div class="mapouter contact-us__map">
+            <div class="gmap_canvas"><iframe width="1920" height="630" id="gmap_canvas"
+                    src="https://maps.google.com/maps?q=Miko%C5%82aja%20Kopernika%2032,%2031-501%20Krak%C3%B3w&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                    frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a
+                    href="https://putlocker-is.org"></a><br>
+                <style>
+                    .mapouter {
+                        position: relative;
+                        text-align: right;
+                        height: 630px;
+                        width: 1920px;
+                    }
+                </style><a href="https://www.embedgooglemap.net">embed google maps iframe</a>
+                <style>
+                    .gmap_canvas {
+                        overflow: hidden;
+                        background: none !important;
+                        height: 630px;
+                        width: 1920px;
+                    }
+                </style>
+            </div>
+        </div>
+    </section>
+
+    <div class="popup popup--hidden">
+            
+    </div>
+</body>
